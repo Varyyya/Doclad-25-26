@@ -1,3 +1,10 @@
+body {
+    font-family: sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
 /* 1. Псевдокласс :hover (одна точка) */
 /* Меняет цвет при наведении мыши */
 a:hover {
@@ -16,6 +23,7 @@ input:focus {
 .text::first-line {
     font-weight: bold;
     color: blue;
+	font-size: 18px;
 }
 
 /* 4. Псевдоэлемент ::before (две точки) */
