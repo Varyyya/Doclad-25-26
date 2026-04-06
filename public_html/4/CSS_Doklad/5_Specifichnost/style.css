@@ -69,3 +69,17 @@ input[type="text"] {
 .box:hover {
     border-color: red;
 }
+
+/* 11. Инлайн-стиль — 1,0,0,0 (в HTML атрибут style) */
+.inline-test {
+    color: navy;  /* НЕ РАБОТАЕТ — style в HTML перебивает */
+}
+
+/* 12. Последний селектор — одинаковая специфичность */
+.last-selector {
+    color: coral;  /* Первый селектор */
+}
+
+.last-selector {
+    color: turquoise;  /* Второй селектор — ПОБЕДИЛ (ниже в CSS) */
+}
