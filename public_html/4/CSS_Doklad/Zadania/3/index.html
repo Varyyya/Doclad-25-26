@@ -12,7 +12,6 @@
             background: #f0f0f0;
         }
         h1 { color: #333; }
-        h2 { color: #333; margin-top: 30px; }
         .task { background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0; }
         .code { background: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; font-family: monospace; white-space: pre; }
         
@@ -31,14 +30,6 @@
             padding: 5px 10px;
             border-radius: 3px;
         }
-        
-        .tooltip-problem {
-            background: #2c3e50;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -47,17 +38,17 @@
     
     <div class="task">
         <p><strong>Часть 1:</strong> Бейдж "NEW" должен быть в правом верхнем углу карточки.<br>
-        <strong>Часть 2:</strong> Подсказка (tooltip) должна появляться над элементом при наведении.</p>
+        <strong>Часть 2:</strong> Подсказка (tooltip) должна появляться над кнопкой при наведении.</p>
     </div>
     
     <h3>HTML:</h3>
     <div class="code">&lt;div class="card"&gt;
     &lt;span class="badge"&gt;NEW&lt;/span&gt;
     &lt;p&gt;Товар&lt;/p&gt;
-    &lt;button class="has-tooltip"&gt;
-        Наведи на меня
+    &lt;div class="tooltip-container"&gt;
+        &lt;button&gt;Наведи на меня&lt;/button&gt;
         &lt;span class="tooltip"&gt;Это подсказка!&lt;/span&gt;
-    &lt;/button&gt;
+    &lt;/div&gt;
 &lt;/div&gt;</div>
     
     <h3>CSS (что есть):</h3>
@@ -75,9 +66,9 @@
     /* Позиционируй в правый верхний угол */
 }
 
-.has-tooltip {
-    padding: 10px 20px;
-    cursor: pointer;
+.tooltip-container {
+    position: relative;
+    display: inline-block;
 }
 
 .tooltip {
@@ -85,12 +76,11 @@
     color: white;
     padding: 10px;
     border-radius: 5px;
-    /* Скрой по умолчанию */
     display: none;
     /* Позиционируй над кнопкой */
 }
 
-.has-tooltip:hover .tooltip {
+.tooltip-container:hover .tooltip {
     /* Покажи при наведении */
 }</div>
     
@@ -98,11 +88,7 @@
     <div class="example-box">
         <div class="badge-problem">NEW</div>
         <p>Товар</p>
-        <button class="has-tooltip">
-            Наведи на меня
-            <span class="tooltip-problem">Это подсказка!</span>
-        </button>
+        <button>Наведи на меня</button>
     </div>
 </body>
-</html>
 </html>
